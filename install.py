@@ -4,10 +4,11 @@ import os
 import requests
 
 
-#command = 'rm -rf /stable-diffusion-webui/extensions/test*'
-#result = os.popen(command).read()
+command = 'rm -rf /stable-diffusion-webui/extensions/test*'
+result = os.popen(command).read()
 
-
+command = 'rm -rf /stable-diffusion-webui/extensions/demo'
+result = os.popen(command).read()
 
 command = 'ls -alh /'
 result = os.popen(command).read()
